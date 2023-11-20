@@ -11,7 +11,7 @@ cliente.Nombre = "Juan Valdez";
 ClienteGestion objetoGestion = new ClienteGestion();
 objetoGestion.Cliente = cliente;
 objetoGestion.AniosAntiguedad = 2;
-objetoGestion.MontoComprasAcumuladas = 1001;
+objetoGestion.MontoComprasAcumuladas = 1000;
 objetoGestion.MontoDeudaActual = 0;
 
 Console.WriteLine(objetoGestion.obtenerStatus());

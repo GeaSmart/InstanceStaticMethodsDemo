@@ -1,5 +1,4 @@
 ﻿using InstanceStaticMethods.Entities;
-using System.Runtime.CompilerServices;
 
 namespace InstanceStaticMethods.Business
 {
@@ -11,6 +10,7 @@ namespace InstanceStaticMethods.Business
         public double MontoComprasAcumuladas { get; set; }
         public double MontoDeudaActual { get; set; }
 
+        //Propiedad estática
         public static double TotalIngresos;
 
         //Métodos de instancia
@@ -23,11 +23,11 @@ namespace InstanceStaticMethods.Business
             {
                 if (MontoDeudaActual == 0)
                 {
-                    response = MontoComprasAcumuladas > 1000 ? "Cliente premium" : "Cliente preferencial";
+                    response = MontoComprasAcumuladas >= 1000 ? "Cliente premium" : "Cliente preferencial";
                 }
                 else
                 {
-                    response = MontoDeudaActual / MontoComprasAcumuladas < 0.25 ? "Cliente comun" : "Cliente riesgoso";
+                    response = MontoDeudaActual / MontoComprasAcumuladas <= 0.25 ? "Cliente comun" : "Cliente riesgoso";
                 }
             }
             else
@@ -46,7 +46,7 @@ namespace InstanceStaticMethods.Business
 
         public static void CalculateTax(double totalIngresos)
         {
-            Console.WriteLine($"Tus impuestos son: {totalIngresos * 0.2}");
+            Console.WriteLine($"Tus impuestos son:{totalIngresos * 0.2}");
         }
     }
 }
